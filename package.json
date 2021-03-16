@@ -1,0 +1,26 @@
+{
+  "name": "bookshop",
+  "version": "1.0.0",
+  "description": "REST api for bookshop.",
+  "main": "bookshops/index.js",
+  "scripts": {
+    "start": "node bookshops/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TDominyka/bookshop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TDominyka/bookshop/issues"
+  },
+  "homepage": "https://github.com/TDominyka/bookshop#readme",
+  "dependencies": {
+    "body-parser": "1.19.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.3",
+    "uuid": "^8.3.0"
+  }
+}
