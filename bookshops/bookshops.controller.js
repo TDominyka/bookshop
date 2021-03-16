@@ -1,4 +1,4 @@
-const BookshopModel = require('./users.model');
+const BookshopModel = require('./bookshops.model');
 
 exports.insert = (req, res) => {
     BookshopModel.createBookshop(req.body)
@@ -21,7 +21,7 @@ exports.getById = (req, res) => {
         });
 };
 exports.patchById = (req, res) => {
-    BookshopModel.patchUser(req.params.bookshopId, req.body)
+    BookshopModel.patchBookshop(req.params.bookshopId, req.body)
         .then((result) => {
             res.status(204).send({});
         });
