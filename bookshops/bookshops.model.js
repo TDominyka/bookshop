@@ -2,19 +2,11 @@ const mongoose = require('./mongoose.service').mongoose;
 const Schema = mongoose.Schema;
 
 const bookshopSchema = new Schema({
-    firstName: String,
-    lastName: String,
-    email: String
+    title: String,
+    address: String,
+    owner: String
 });
-const Bookshop = mongoose.model('Users', bookshopSchema);
-
-//bookshopSchema.findById = function (cb) {
-//    return this.model('Users').find({id: this.id}, cb);
-//};
-
-//exports.findByEmail = (email) => {
- //   return Bookshop.find({email: email});
-//};
+const Bookshop = mongoose.model('Bookshops', bookshopSchema);
 
 exports.findById = (id) => {
     return Bookshop.findById(id)
@@ -27,8 +19,8 @@ exports.findById = (id) => {
 };
 
 exports.createBookshop = (bookshopData) => {
-    const user = new Bookshop(bookshopData);
-    return user.save();
+    const bookshop = new Bookshop(bookshopData);
+    return bookshop.save();
 };
 
 exports.list = () => {
@@ -44,7 +36,7 @@ exports.list = () => {
     });
 };
 
-exports.patchUser = (id, bookshopData) => {
+exports.patchBookshop = (id, bookshopData) => {
     return Bookshop.findOneAndUpdate({
         _id: id
     }, bookshopData);

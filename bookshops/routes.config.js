@@ -1,5 +1,4 @@
-const BookshopsController = require('./users.controller');
-//const config = require('../common/config/env.config');
+const BookshopsController = require('./bookshops.controller');
 
 exports.routesConfig = function (app) {
     app.post('/bookshops', [
