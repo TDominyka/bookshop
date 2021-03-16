@@ -1,12 +1,12 @@
-version: '1'
+version: '3'
 services:
   api:
-    image: makinhs/rest-api-tutorial
+    image: dominyka/books
     build: .
     networks:
       - backend
     ports:
-      - "3600:3600"
+      - "5000:5000"
     depends_on:
       - mongo
 
@@ -18,14 +18,6 @@ services:
       - backend
     ports:
       - "27017:27017"
-
-  web-cli:
-    image: makinhs/rest-api-tutorial
-    links:
-      - mongo
-    networks:
-      - backend
-    command: sh
 
 networks:
   backend:
