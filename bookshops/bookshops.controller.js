@@ -3,6 +3,7 @@ const BookshopModel = require('./bookshops.model');
 exports.insert = (req, res) => {
     BookshopModel.createBookshop(req.body)
         .then((result) => {
+            res.append('Link', 'http://localhost:5000/bookshops/' + result._id);
             res.status(201).send(result);
         });
 };
