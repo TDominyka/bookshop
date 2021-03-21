@@ -6,7 +6,7 @@ docker-compose build
 docker-compose up 
 
  {  
-      "title": "VU3",   
-      "address": "Ramuniu g. 10",   
-      "owner" : "Petras Petraitis"    
+    "title": "VU3",   
+    "address": "Ramuniu g. 10",   
+    "owner" : "Petras Petraitis"    
   } 

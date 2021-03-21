@@ -1,12 +1,13 @@
+'use strict';
 const mongoose = require('./mongoose.service').mongoose;
-const Schema = mongoose.Schema;
-
-const bookshopSchema = new Schema({
+let Bookshop;
+const bookshopSchema = new mongoose.Schema({
     title: String,
     address: String,
     owner: String
 });
-const Bookshop = mongoose.model('Bookshops', bookshopSchema);
+
+Bookshop = mongoose.model('Bookshops', bookshopSchema);
 
 exports.findById = (id) => {
     return Bookshop.findById(id)
@@ -26,11 +27,11 @@ exports.createBookshop = (bookshopData) => {
 exports.list = () => {
     return new Promise((resolve, reject) => {
         Bookshop.find()
-            .exec(function (err, users) {
+            .exec(function (err, bookshops) {
                 if (err) {
                     reject(err);
                 } else {
-                    resolve(users);
+                    resolve(bookshops);
                 }
             })
     });

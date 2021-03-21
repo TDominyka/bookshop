@@ -1,4 +1,6 @@
 const config = require('./env.config.js');
+const Bookshop = require('./bookshops.model');
+const Controller = require('./bookshops.controller');
 
 const express = require('express');
 const app = express();
@@ -15,10 +17,15 @@ app.use(function (req, res, next) {
 });
 
 app.use(bodyParser.json());
-BookshopsRouter.routesConfig(app);
 
+BookshopsRouter.routesConfig(app);
 
 app.listen(config.port, function () {
     console.log('app listening at port %s', config.port);
 });
-app.set()
+Bookshop.createBookshop({
+    title: "VU",
+    address: "Ramuniu g. 10",
+    owner: "Petras Petraitis"
+});
+app.set();
