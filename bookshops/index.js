@@ -20,12 +20,14 @@ app.use(bodyParser.json());
 
 BookshopsRouter.routesConfig(app);
 
-app.listen(config.port, function () {
-    console.log('app listening at port %s', config.port);
-});
 Bookshop.createBookshop({
     title: "VU",
     address: "Ramuniu g. 10",
     owner: "Petras Petraitis"
 });
+
+app.listen(config.port, function () {
+    console.log('app listening at port %s', config.port);
+});
+
 app.set();
